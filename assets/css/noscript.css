@@ -11,8 +11,9 @@
 	}
 
 	body.is-preload #header.alt .logo {
-		-moz-transform: none;
-		-webkit-transform: none;
-		-ms-transform: none;
-		transform: none;
+		-moz-flex-grow: 1;
+		-webkit-flex-grow: 1;
+		-ms-flex-grow: 1;
+		flex-grow: 1;
+		margin: 0 0 2em 0;
 	}
