@@ -120,34 +120,34 @@ auto_alignButton.addEventListener('click', () => {
     }
     
   // detect mouth in face ROI
-  let face_down = new cv.RectVector();
-  let mouth = new cv.RectVector();
-  face_down.x = faces.get(i).x;
-  face_down.y = faces.get(i).y+faces.get(i).height*0.5;
-  face_down.height = faces.get(i).height*0.5;
-  face_down.width = faces.get(i).width;
-  let roiGray = gray.roi(face_down);
-  mouthCascade.detectMultiScale(roiGray, mouth);
-  let point1_m = new cv.Point(face_down.x, face_down.y);
-  let point2_m = new cv.Point(face_down.x + face_down.width,
-                          face_down.y + face_down.height);
-  // cv.rectangle(src, point1_m, point2_m, [0, 0, 0, 255]);
-  let middle_point = new cv.Point(0,0); 
-  for (let j = 0; j < mouth.size(); ++j) {
-    let current_middle_point = new cv.Point(mouth.get(j).x + mouth.get(j).width*0.5,
-                                  mouth.get(j).y + mouth.get(i).height*0.5);
-    if (middle_point.x!=0){
-      middle_point.x = (middle_point.x+current_middle_point.x)*0.5;
-      middle_point.y = (middle_point.y+current_middle_point.y)*0.5;
-    }
-    else
-    {
-      middle_point = current_middle_point
-    }
-  }      
-  src_points[4] = middle_point.x+face_down.x;
-  src_points[5] = middle_point.y+face_down.y;
-  cv.circle(roiGray, middle_point,4 ,[0, 255, 255, 255]);
+  // let face_down = new cv.RectVector();
+  // let mouth = new cv.RectVector();
+  // face_down.x = faces.get(i).x;
+  // face_down.y = faces.get(i).y+faces.get(i).height*0.5;
+  // face_down.height = faces.get(i).height*0.5;
+  // face_down.width = faces.get(i).width;
+  // let roiGray = gray.roi(face_down);
+  // mouthCascade.detectMultiScale(roiGray, mouth);
+  // let point1_m = new cv.Point(face_down.x, face_down.y);
+  // let point2_m = new cv.Point(face_down.x + face_down.width,
+  //                         face_down.y + face_down.height);
+  // // cv.rectangle(src, point1_m, point2_m, [0, 0, 0, 255]);
+  // let middle_point = new cv.Point(0,0); 
+  // for (let j = 0; j < mouth.size(); ++j) {
+  //   let current_middle_point = new cv.Point(mouth.get(j).x + mouth.get(j).width*0.5,
+  //                                 mouth.get(j).y + mouth.get(i).height*0.5);
+  //   if (middle_point.x!=0){
+  //     middle_point.x = (middle_point.x+current_middle_point.x)*0.5;
+  //     middle_point.y = (middle_point.y+current_middle_point.y)*0.5;
+  //   }
+  //   else
+  //   {
+  //     middle_point = current_middle_point
+  //   }
+  // }      
+  // src_points[4] = middle_point.x+face_down.x;
+  // src_points[5] = middle_point.y+face_down.y;
+  // cv.circle(roiGray, middle_point,4 ,[0, 255, 255, 255]);
   cv.imshow('canvasInput', gray);
   dst = new cv.Mat();
   // dst_points = [120, 196, 195, 196, 160, 300];
