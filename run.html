@@ -38,7 +38,6 @@
 </div>
 
 
-
 <script src="js/utils.js" type="text/javascript"></script>
 <script src="js/opencv.js" type="text/javascript"></script>
 
@@ -53,6 +52,7 @@ utils.createFileFromUrl(eyeCascadeFile, eyeCascadeFile, () => {
     let faceCascadeFile = 'haarcascade_frontalface_default.xml';
     utils.createFileFromUrl(faceCascadeFile, faceCascadeFile, () => {
     auto_alignButton.removeAttribute('disabled');
+    })
 });
 
 auto_alignButton.addEventListener('click', () => {
