@@ -48,9 +48,9 @@ let auto_alignButton = document.getElementById('auto_alignButton');
 let utils = new Utils('errorMessage');
 
 
-let eyeCascadeFile = 'haarcascade_eye.xml';
+let eyeCascadeFile = 'js/haarcascade_eye.xml';
 utils.createFileFromUrl(eyeCascadeFile, eyeCascadeFile, () => {
-    let faceCascadeFile = 'haarcascade_frontalface_default.xml';
+    let faceCascadeFile = 'js/haarcascade_frontalface_default.xml';
     utils.createFileFromUrl(faceCascadeFile, faceCascadeFile, () => {
     auto_alignButton.removeAttribute('disabled');
     })
@@ -65,7 +65,6 @@ auto_alignButton.addEventListener('click', () => {
 	let eyes = new cv.RectVector();
 	let faceCascade = new cv.CascadeClassifier();
 	let eyeCascade = new cv.CascadeClassifier();
-	let mouthCascade = new cv.CascadeClassifier();
 	// load pre-trained classifiers
 	faceCascade.load('haarcascade_frontalface_default.xml');
 	eyeCascade.load('haarcascade_eye.xml');
