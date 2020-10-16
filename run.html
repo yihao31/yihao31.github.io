@@ -40,17 +40,6 @@
 // added by haoyi for auto alignment
 let auto_alignButton = document.getElementById('auto_alignButton');
 let utils = new Utils('errorMessage');
-// utils.addFileInputHandler('fileInput', 'canvasInput');
-// utils.loadOpenCv(() => {
-//       let eyeCascadeFile = 'haarcascade_eye.xml';
-//       utils.createFileFromUrl(eyeCascadeFile, eyeCascadeFile, () => {
-//           let faceCascadeFile = 'haarcascade_frontalface_default.xml';
-//           utils.createFileFromUrl(faceCascadeFile, faceCascadeFile, () => {
-
-  // auto_alignButton.removeAttribute('disabled');
-//           });
-//       });
-//   });
 
 
 let eyeCascadeFile = 'haarcascade_eye.xml';
@@ -172,9 +161,6 @@ img.onload = function() {
   dst = new cv.Mat();
   // alert("请使用鼠标左键依次点击人脸图片的左眼中心、右眼中心、嘴巴中心然后点击手动对齐按钮进行人脸对齐");
 };
-
-// src_points = [0, 0, 0, 0, 0, 0];
-// dst_points = [120, 196, 195, 196, 160, 300];
 
 var i = 0;
 src_points = [0, 0, 0, 0, 0, 0];
