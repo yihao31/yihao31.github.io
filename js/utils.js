@@ -20,6 +20,7 @@ function Utils(errorOutputId) { // eslint-disable-line no-unused-vars
     };
 
     this.createFileFromUrl = function(path, url, callback) {
+        console.log('debug')
         let request = new XMLHttpRequest();
         request.open('GET', url, true);
         request.responseType = 'arraybuffer';
